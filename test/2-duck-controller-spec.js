@@ -33,6 +33,7 @@ describe('DuckController', () => {
         });
 
     });
+
     describe('addDuck', () => {
 
         it('should add duck', () => {

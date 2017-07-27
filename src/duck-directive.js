@@ -6,7 +6,8 @@ class Duck {
         };
         this.template = `
             <div class="duck">
-                 <img src="assets/duck.png"> #{{id}}
+                 <img src="assets/duck.png"> 
+                 <span>#{{id}}</span>
             </div>
         `;
     }
