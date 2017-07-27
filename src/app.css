@@ -1,0 +1,7 @@
+.duck-counter {
+    border: solid 1px pink;
+    display: inline-block;
+    padding: 4rem;
+    text-align: center;
+    width: 400px;
+}

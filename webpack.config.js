@@ -1,10 +1,13 @@
-var path = require('path');
+let path = require('path');
+let CopyWebpackPlugin = require('copy-webpack-plugin');
 
-module.exports = {
+const OUT_PATH = path.resolve(__dirname, 'dist');
+
+module.exports = [{
     entry: './src/app.js',
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist')
+        path: OUT_PATH
     },
     module: {
         rules: [
@@ -17,5 +20,11 @@ module.exports = {
                 }
             }
         ]
-    }
-};
+    },
+    plugins: [
+        new CopyWebpackPlugin([{
+            from: './src/app.css',
+            to: './styles.css'
+        }])
+    ]
+}];

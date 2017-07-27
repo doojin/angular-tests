@@ -1,8 +1,7 @@
-class A {
-    x() {
-        console.log('x');
-    }
-}
+import '../node_modules/angular/angular';
 
-let a = new A();
-a.x();
+import DuckCounter from './duck-counter';
+
+let app = angular.module('ExampleApp', []);
+
+app.directive('duckCounter', DuckCounter);
