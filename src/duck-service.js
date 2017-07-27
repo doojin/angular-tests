@@ -11,7 +11,7 @@ class DuckService {
         ];
 
         return this.$q(resolve => {
-            setTimeout(() => resolve(ducks), 1500);
+            setTimeout(() => resolve(ducks), 500);
         })
     }
 }
