@@ -1,7 +1,8 @@
 import '../node_modules/angular/angular';
-
-import DuckCounter from './duck-counter';
+import DuckController from './duck-controller';
+import Duck from './duck-directive';
 
 let app = angular.module('ExampleApp', []);
 
-app.directive('duckCounter', DuckCounter);
+app.controller('DuckController', DuckController);
+app.directive('duck', Duck);
