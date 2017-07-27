@@ -1,6 +1,8 @@
 class DuckController {
-    constructor($scope) {
+
+    constructor($scope, duckService) {
         $scope.ducks = [];
+        duckService.getDucks().then(ducks => $scope.ducks = ducks);
 
         $scope.addDuck = this.addDuck.bind(this);
 
