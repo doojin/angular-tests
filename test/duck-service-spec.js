@@ -1,6 +1,6 @@
 describe('DuckService', () => {
 
-    beforeEach(angular.mock.module('ExampleApp'));
+    beforeEach(angular.mock.module('DuckApp'));
 
     let duckService, httpBackend;
 
