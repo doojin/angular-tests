@@ -6,5 +6,5 @@ import Duck from './duck-directive';
 let app = angular.module('ExampleApp', []);
 
 app.controller('DuckController', ['$scope', 'DuckService', DuckController]);
-app.service('DuckService', ['$q', DuckService]);
+app.service('DuckService', ['$http', '$q', DuckService]);
 app.directive('duck', Duck);

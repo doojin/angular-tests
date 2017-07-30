@@ -1,18 +1,17 @@
 class DuckService {
 
-    constructor($q) {
+    constructor($http, $q) {
+        this.$http = $http;
         this.$q = $q;
     }
 
     getDucks() {
-        let ducks = [
-            { id: 0 },
-            { id: 1 }
-        ];
+        let deferred = this.$q.defer();
 
-        return this.$q(resolve => {
-            setTimeout(() => resolve(ducks), 500);
-        })
+        this.$http.get('http://localhost:9696/ducks')
+            .then(response => deferred.resolve(response.data));
+        
+        return deferred.promise;
     }
 }
 

@@ -1,12 +1,17 @@
 class DuckController {
 
     constructor($scope, duckService) {
-        $scope.ducks = [];
-        duckService.getDucks().then(ducks => $scope.ducks = ducks);
-
-        $scope.addDuck = this.addDuck.bind(this);
-
         this.$scope = $scope;
+        this.duckService = duckService;
+
+        this.$scope.ducks = [];
+    
+        this.$scope.init = this.init.bind(this);
+        this.$scope.addDuck = this.addDuck.bind(this);
+    }
+
+    init() {
+        this.duckService.getDucks().then(ducks => this.$scope.ducks = ducks);
     }
 
     addDuck() {

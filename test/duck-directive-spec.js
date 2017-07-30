@@ -1,15 +1,15 @@
 describe('duckDirective', () => {
 
-    let $compile, $scope;
-
     beforeEach(angular.mock.module('ExampleApp'));
+
+    let $compile, $scope;
 
     beforeEach(inject((_$compile_, _$rootScope_) => {
         $compile = _$compile_;
         $scope = _$rootScope_;
     }));
 
-    it('should contain duck image', () => {
+    it('should display duck image', () => {
         let element = $compile(`<duck id="5"></duck>`)($scope);
 
         $scope.$digest();
@@ -19,7 +19,7 @@ describe('duckDirective', () => {
         expect(image.attr('src')).toEqual('assets/duck.png');
     });
 
-    it('should contain id', () => {
+    it('should display duck id', () => {
         let element = $compile(`<duck id="5"></duck>`)($scope);
 
         $scope.$digest();
